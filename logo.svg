@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Vortex Speech &amp; Debate crest">
+<defs><style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap');
+.ring{fill:none;stroke:#1C1814;}
+.gold{fill:none;stroke:#B68A3C;}
+.rt{font-family:'Cinzel',serif;fill:#1C1814;letter-spacing:2px;}
+.tg{font-family:'Cinzel',serif;fill:#B68A3C;letter-spacing:3px;}
+</style></defs>
+
+<!-- concentric rings -->
+<circle class="ring" cx="100" cy="100" r="95" stroke-width="2.2"/>
+<circle class="gold" cx="100" cy="100" r="88" stroke-width="1"/>
+<circle class="gold" cx="100" cy="100" r="60.5" stroke-width="1"/>
+
+<!-- circular type -->
+<path id="topArc" fill="none" d="M 31 100 A 69 69 0 0 1 169 100"/>
+<path id="botArc" fill="none" d="M 33 100 A 67 67 0 0 0 167 100"/>
+<text class="rt" font-size="12.5" font-weight="600"><textPath href="#topArc" startOffset="50%" text-anchor="middle">VORTEX SPEECH &amp; DEBATE</textPath></text>
+<text class="tg" font-size="9" font-weight="500"><textPath href="#botArc" startOffset="50%" text-anchor="middle">FIND&#160;&#160;YOUR&#160;&#160;VOICE</textPath></text>
+
+<!-- side diamonds -->
+<path d="M 179.5 96 L 183.5 100 L 179.5 104 L 175.5 100 Z" fill="#B68A3C"/>
+<path d="M 20.5 96 L 24.5 100 L 20.5 104 L 16.5 100 Z" fill="#B68A3C"/>
+
+<!-- laurel sprigs -->
+<path class="gold" stroke-width="1.5" d="M 81.2 143.3 A 40 40 0 0 1 78.8 74.1"/>
+<path d="M 70.3 134.8 Q 63.4 134.4 61.2 140.9 Q 68.1 141.3 70.3 134.8 Z" fill="#B68A3C"/>
+<path d="M 62.9 123.0 Q 56.6 120.2 52.2 125.6 Q 58.6 128.4 62.9 123.0 Z" fill="#B68A3C"/>
+<path d="M 60.0 109.4 Q 55.0 104.6 49.1 108.2 Q 54.1 113.0 60.0 109.4 Z" fill="#B68A3C"/>
+<path d="M 62.0 95.6 Q 58.9 89.5 52.1 90.8 Q 55.2 97.0 62.0 95.6 Z" fill="#B68A3C"/>
+<path d="M 68.5 83.4 Q 67.7 76.5 60.8 75.5 Q 61.6 82.3 68.5 83.4 Z" fill="#B68A3C"/>
+<path d="M 78.8 74.1 Q 80.4 67.3 74.3 64.0 Q 72.7 70.8 78.8 74.1 Z" fill="#B68A3C"/>
+<path class="gold" stroke-width="1.5" d="M 118.8 143.3 A 40 40 0 0 0 121.2 74.1"/>
+<path d="M 129.7 134.8 Q 131.9 141.3 138.8 140.9 Q 136.6 134.4 129.7 134.8 Z" fill="#B68A3C"/>
+<path d="M 137.1 123.0 Q 141.4 128.4 147.8 125.6 Q 143.4 120.2 137.1 123.0 Z" fill="#B68A3C"/>
+<path d="M 140.0 109.4 Q 145.9 113.0 150.9 108.2 Q 145.0 104.6 140.0 109.4 Z" fill="#B68A3C"/>
+<path d="M 138.0 95.6 Q 144.8 97.0 147.9 90.8 Q 141.1 89.5 138.0 95.6 Z" fill="#B68A3C"/>
+<path d="M 131.5 83.4 Q 138.4 82.3 139.2 75.5 Q 132.3 76.5 131.5 83.4 Z" fill="#B68A3C"/>
+<path d="M 121.2 74.1 Q 127.3 70.8 125.7 64.0 Q 119.6 67.3 121.2 74.1 Z" fill="#B68A3C"/>
+
+<!-- center: speech bubble holding a vortex swirl -->
+<path class="ring" stroke-width="3" stroke-linejoin="round" d="M 82 74 H 118 A 10 10 0 0 1 128 84 V 98 A 10 10 0 0 1 118 108 H 97 L 87 119 L 87 108 H 82 A 10 10 0 0 1 72 98 V 84 A 10 10 0 0 1 82 74 Z"/>
+<path class="gold" stroke-width="3" stroke-linecap="round" d="M 100 81 a 10 10 0 1 1 -7.5 17 a 5.5 5.5 0 1 1 7.8 -4"/>
+</svg>
