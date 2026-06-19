@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="none" role="img" aria-label="Two young debaters speaking at lecterns beneath a Roman arch">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EFE4CC"/>
+      <stop offset="1" stop-color="#E2D2B4"/>
+    </linearGradient>
+  </defs>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <!-- arch panel -->
+    <path d="M96 250 V150 a144 144 0 0 1 288 0 V250" fill="url(#sky)"/>
+    <path d="M96 250 V150 a144 144 0 0 1 288 0 V250" stroke="#33291E" stroke-width="3"/>
+    <!-- inner arch hairline -->
+    <path d="M118 250 V152 a122 122 0 0 1 244 0 V250" stroke="#B0772F" stroke-width="1.6" opacity=".8"/>
+    <!-- keystone -->
+    <path d="M228 30 h24 l6 22 h-36 z" fill="#B0772F" stroke="#33291E" stroke-width="2.4"/>
+
+    <!-- laurel sparks above the debate -->
+    <g stroke="#B0532F" stroke-width="2.6">
+      <path d="M240 92 v26"/>
+      <path d="M240 100 l-14 -8 M240 100 l14 -8 M240 112 l-12 -7 M240 112 l12 -7"/>
+    </g>
+
+    <!-- left debater -->
+    <g>
+      <circle cx="176" cy="170" r="22" fill="#F4ECDC" stroke="#33291E" stroke-width="3"/>
+      <path d="M155 168 a21 21 0 0 1 42 0" fill="#6E6353"/>
+      <path d="M154 244 v-22 a22 22 0 0 1 22 -22 h0 a22 22 0 0 1 22 22 v22" fill="#5B4632" stroke="#33291E" stroke-width="3"/>
+      <!-- lectern -->
+      <path d="M150 250 h52 l-8 -34 h-36 z" fill="#E7DAC1" stroke="#33291E" stroke-width="3"/>
+      <path d="M168 226 h28" stroke="#B0772F" stroke-width="2.4"/>
+    </g>
+
+    <!-- right debater -->
+    <g>
+      <circle cx="304" cy="170" r="22" fill="#F4ECDC" stroke="#33291E" stroke-width="3"/>
+      <path d="M283 168 a21 21 0 0 1 42 0" fill="#6E6353"/>
+      <path d="M282 244 v-22 a22 22 0 0 1 22 -22 h0 a22 22 0 0 1 22 22 v22" fill="#B0532F" stroke="#33291E" stroke-width="3"/>
+      <path d="M278 250 h52 l-8 -34 h-36 z" fill="#E7DAC1" stroke="#33291E" stroke-width="3"/>
+      <path d="M296 226 h28" stroke="#B0772F" stroke-width="2.4"/>
+    </g>
+
+    <!-- speech bubbles between them -->
+    <g>
+      <rect x="206" y="150" width="34" height="24" rx="8" fill="#33291E"/>
+      <path d="M214 174 l-2 8 8 -6 z" fill="#33291E"/>
+      <rect x="240" y="176" width="34" height="24" rx="8" fill="#B0772F"/>
+      <path d="M266 200 l2 8 -8 -6 z" fill="#B0772F"/>
+    </g>
+
+    <!-- floor + steps -->
+    <path d="M70 250 h340" stroke="#33291E" stroke-width="3"/>
+    <path d="M88 268 h304 M104 286 h272" stroke="#6E6353" stroke-width="2.2" opacity=".7"/>
+    <!-- greek-key hint on the base -->
+    <path d="M150 304 h12 v-8 h10 v14 h-22 z M308 304 h12 v-8 h10 v14 h-22 z" stroke="#B0532F" stroke-width="2"/>
+  </g>
+</svg>
