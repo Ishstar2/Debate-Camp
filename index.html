@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vortex Speech &amp; Debate: Free Online Debate Camp for Grades 5–8</title>
+<meta name="description" content="A free online debate and public-speaking camp for kids in grades 5–8. Learn to think on your feet, build an argument, and speak with confidence. All at no cost." />
+<meta name="theme-color" content="#33291E" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Vortex Speech &amp; Debate: Free Online Debate Camp" />
+<meta property="og:description" content="Free, one-on-one coaching in debate and public speaking for kids in grades 5 through 8. One hour a week, online." />
+<meta property="og:image" content="og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Vortex Speech &amp; Debate, a free online debate camp for grades 5 to 8" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Vortex Speech &amp; Debate: Free Online Debate Camp" />
+<meta name="twitter:description" content="Free debate &amp; public-speaking coaching for grades 5–8. One-on-one, online, every week." />
+<meta name="twitter:image" content="og-image.png" />
+<link rel="icon" href="logo.svg" type="image/svg+xml" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+
+<!-- ============================================================ -->
+<!--  Name + contact are already set (Vortex Speech & Debate,      -->
+<!--  vortexdebate@gmail.com). The Register button currently      -->
+<!--  opens a Google Form; to change it, replace the forms.gle     -->
+<!--  links in the hero and #register sections.                    -->
+<!-- ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* ─────────────────────────────────────────────────────────────
+     COLOR — Roman Forum palette, retained. Flat-minimal roles.
+     ───────────────────────────────────────────────────────────── */
+  --paper:#F4ECDC;          /* travertine off-white (page surface) */
+  --paper-2:#E7DAC1;        /* deeper cream (alt bands / fills)    */
+  --surface:#FFFFFF;        /* clean card surface                  */
+  --ink:#33291E;            /* basalt brown-black (primary / dark) */
+  --ink-2:#574C3C;          /* body text on light                  */
+  --ink-soft:#7A6E5C;       /* muted text                          */
+  --blue:#5B4632;           /* deep umber (dark panels)            */
+  --blue-2:#3F2F1E;         /* darkest umber                       */
+  --gold:#B0772F;           /* aged bronze (small highlights)      */
+  --gold-2:#8C5A20;         /* darker bronze (text / focus)        */
+  --clay:#B0532F;           /* terracotta — the ONE accent CTA     */
+  --clay-2:#8E3F20;         /* clay hover / pressed                */
+  --stone:#8A8072;          /* neutral stone                       */
+  --line:#E0D2B6;           /* hairline on paper                   */
+  --line-2:#CDBC98;         /* stronger hairline                   */
+
+  --color-success:#3F7A4B;
+  --color-error:#A23B2E;
+  --color-warning:#B0772F;
+
+  /* ── Type scale: 12 / 14 / 16 / 18 / 24 / 32 / 48 ── */
+  --fs-12:.75rem;
+  --fs-14:.875rem;
+  --fs-16:1rem;
+  --fs-18:1.125rem;
+  --fs-24:1.5rem;
+  --fs-32:2rem;
+  --fs-48:3rem;
+  --fs-h1:clamp(2.1rem,1.4rem + 3vw,3rem);   /* hero, tops out at 48 */
+  --fs-h2:clamp(1.85rem,1.3rem + 2.2vw,2.4rem);
+  --lh-body:1.6;
+
+  /* ── Spacing: 4 / 8 based ── */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:.75rem; --sp-4:1rem;
+  --sp-5:1.5rem; --sp-6:2rem; --sp-8:3rem; --sp-10:4rem; --sp-12:5rem;
+
+  /* ── Radius (12–16) + subtle flat shadows ── */
+  --r-sm:12px; --r:14px; --r-lg:16px;
+  --shadow-sm:0 1px 2px rgba(51,41,30,.06), 0 2px 8px rgba(51,41,30,.05);
+  --shadow:0 4px 12px rgba(51,41,30,.08), 0 8px 28px rgba(51,41,30,.07);
+
+  --maxw:1180px;
+  --ls-label:.16em;   /* tracked uppercase labels */
+
+  --font-head:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+  --font-body:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:var(--lh-body);
+  font-size:var(--fs-16);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:var(--font-head);font-weight:700;line-height:1.15;letter-spacing:-.01em;text-wrap:balance}
+p,li{text-wrap:pretty}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+
+/* tracked eyebrow label */
+.eyebrow{display:inline-flex;align-items:center;gap:.6em;font-family:var(--font-head);font-weight:700;
+  font-size:var(--fs-12);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--gold-2)}
+.eyebrow::before{content:"";width:24px;height:2px;background:var(--gold);border-radius:2px}
+.center .eyebrow{justify-content:center}
+
+/* ── focus visibility (a11y) ── */
+a:focus-visible,button:focus-visible,summary:focus-visible,.ccard:focus-visible{
+  outline:3px solid var(--gold-2);outline-offset:3px;border-radius:6px}
+
+/* ───────────────────────── buttons ───────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  font-family:var(--font-head);font-weight:700;font-size:var(--fs-16);
+  padding:13px 24px;min-height:48px;border-radius:10px;border:1.5px solid transparent;
+  cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease,transform .12s ease;
+  background:transparent;color:var(--ink);line-height:1}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .2s ease}
+.btn:active{transform:translateY(1px)}
+/* the single saturated CTA */
+.btn-primary{background:var(--clay);color:#fff;border-color:var(--clay)}
+.btn-primary:hover{background:var(--clay-2);border-color:var(--clay-2)}
+.btn-primary:hover svg{transform:translateX(3px)}
+/* quiet secondary */
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+/* for use on dark panels */
+.btn-light{background:transparent;color:var(--paper);border-color:rgba(244,236,220,.5)}
+.btn-light:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+
+/* ───────────────────────── ticker (trust strip) ───────────────────────── */
+.ticker{background:var(--ink);color:var(--paper);overflow:hidden;border-bottom:1px solid var(--gold-2)}
+.ticker__track{display:flex;width:max-content;animation:scroll 38s linear infinite}
+.ticker span{font-family:var(--font-head);font-weight:600;font-size:var(--fs-12);letter-spacing:var(--ls-label);
+  text-transform:uppercase;padding:9px 0;display:flex;align-items:center;white-space:nowrap}
+.ticker span i{margin:0 20px;color:var(--gold);font-style:normal}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ───────────────────────── nav ───────────────────────── */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(244,236,220,.92);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{display:flex;align-items:center;gap:.6em}
+.brand .mark{width:42px;height:42px;flex:none;border-radius:10px;border:1.5px solid var(--ink);
+  display:grid;place-items:center;background:var(--surface)}
+.brand .mark svg{width:26px;height:24px}
+.brand .wm{display:flex;flex-direction:column;line-height:1.05}
+.brand .wm b{font-family:var(--font-head);font-weight:800;font-size:1.25rem;letter-spacing:-.01em}
+.brand .wm small{font-family:var(--font-head);font-weight:600;font-size:.56rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold-2);margin-top:3px}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a:not(.btn){position:relative;padding:10px 12px;border-radius:8px;font-family:var(--font-head);
+  font-weight:600;font-size:var(--fs-14);color:var(--ink-2);min-height:44px;display:inline-flex;align-items:center;
+  transition:background .2s,color .2s}
+.nav-links a:not(.btn):hover{background:var(--paper-2);color:var(--ink)}
+.nav-links .btn{padding:10px 18px;min-height:44px;margin-left:8px;font-size:var(--fs-14)}
+.nav-toggle{display:none;background:var(--surface);border:1.5px solid var(--ink);border-radius:10px;
+  width:46px;height:46px;cursor:pointer;place-items:center}
+.nav-toggle svg{width:22px;height:22px;stroke:var(--ink)}
+@media(max-width:900px){
+  .nav-links{position:absolute;top:70px;left:0;right:0;background:var(--paper);flex-direction:column;
+    gap:4px;padding:14px 24px 22px;border-bottom:1px solid var(--line);display:none;align-items:stretch}
+  .nav-links.open{display:flex}
+  .nav-links a:not(.btn){padding:12px;border-radius:10px}
+  .nav-links .btn{margin-left:0;width:100%;min-height:48px}
+  .nav-toggle{display:grid}
+  .brand .wm small{display:none}
+}
+
+/* ───────────────────────── section scaffold ───────────────────────── */
+section{padding:var(--sp-12) 0}
+.head{max-width:42rem;margin-bottom:var(--sp-8)}
+.head .eyebrow{margin-bottom:var(--sp-4)}
+.head h2{font-size:var(--fs-h2);margin-bottom:var(--sp-4)}
+.head h2 em{font-style:normal;color:var(--clay)}
+.head p{font-size:var(--fs-18);color:var(--ink-2);max-width:60ch}
+.center{text-align:center;margin-inline:auto}
+.center.head{margin-inline:auto}
+.center.head p{margin-inline:auto}
+
+/* ───────────────────────── hero ───────────────────────── */
+.hero{padding:var(--sp-10) 0 var(--sp-8);
+  background:linear-gradient(rgba(244,236,220,.86),rgba(244,236,220,.92)),url("hero-bg.jpg");
+  background-size:cover;background-position:center right;background-repeat:no-repeat}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--sp-10);align-items:center}
+.badge-free{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-2);background:var(--surface);
+  padding:8px 14px;border-radius:999px;font-family:var(--font-head);font-weight:600;font-size:var(--fs-12);
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-bottom:var(--sp-5)}
+.badge-free .pulse{width:8px;height:8px;border-radius:50%;background:var(--clay);
+  box-shadow:0 0 0 0 rgba(176,83,47,.5);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(176,83,47,.5)}70%{box-shadow:0 0 0 8px rgba(176,83,47,0)}100%{box-shadow:0 0 0 0 rgba(176,83,47,0)}}
+.hero .slogan{font-family:var(--font-head);font-weight:600;font-size:var(--fs-18);color:var(--gold-2);margin-bottom:var(--sp-3)}
+.hero h1{font-size:var(--fs-h1);margin-bottom:var(--sp-4)}
+.hero h1 .accent{color:var(--clay)}
+.hero .lede{font-size:var(--fs-18);color:var(--ink-2);max-width:34em;margin-bottom:var(--sp-6)}
+.hero-cta{display:flex;gap:var(--sp-3);flex-wrap:wrap}
+/* hero art — flat framed illustration + trust chips */
+.hero-art{position:relative;display:grid;place-items:center;min-height:380px}
+.art-frame{width:min(380px,92%);aspect-ratio:1;border-radius:var(--r-lg);background:var(--paper-2);
+  border:1px solid var(--line-2);box-shadow:var(--shadow);display:grid;place-items:center;padding:22px}
+.art-frame img{width:100%;height:100%}
+.art-chip{position:absolute;display:inline-flex;align-items:center;gap:8px;background:var(--surface);
+  border:1px solid var(--line-2);border-radius:999px;padding:9px 15px;box-shadow:var(--shadow-sm);
+  font-family:var(--font-head);font-weight:700;font-size:var(--fs-14);color:var(--ink)}
+.art-chip svg{width:18px;height:18px;flex:none}
+.chip-1{top:6%;left:-2%}
+.chip-1 svg{stroke:var(--clay);fill:none;stroke-width:2.4}
+.chip-2{bottom:7%;right:-2%}
+.chip-2 svg{stroke:var(--gold-2);fill:none;stroke-width:2}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:var(--sp-6)}
+  .hero-art{min-height:320px;margin-top:var(--sp-2)}
+}
+
+/* ───────────────────────── mission ───────────────────────── */
+.mission{background:var(--paper-2);text-align:center}
+.mission .inner{max-width:46rem;margin:0 auto}
+.mission p.lead{font-family:var(--font-head);font-weight:600;font-size:clamp(1.4rem,1rem + 1.8vw,2rem);
+  line-height:1.35;color:var(--ink)}
+.mission p.lead b{color:var(--clay);font-weight:700}
+
+/* ───────────────────────── curriculum FAN carousel ───────────────────────── */
+.fan-wrap{margin-top:var(--sp-2);display:flex;flex-direction:column;align-items:center}
+.fan-stage{position:relative;width:100%;height:clamp(380px,52vh,460px);
+  display:grid;place-items:center;perspective:1400px}
+.fan-card{position:absolute;left:50%;top:50%;
+  width:clamp(220px,24vw,272px);height:clamp(322px,44vh,400px);
+  background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r-lg);
+  box-shadow:var(--shadow);padding:28px 26px;display:flex;flex-direction:column;text-align:center;
+  cursor:pointer;will-change:transform,opacity;backface-visibility:hidden;-webkit-tap-highlight-color:transparent}
+.fan-card .ic{width:54px;height:54px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;
+  margin:var(--sp-2) auto var(--sp-4);background:var(--paper);flex:none}
+.fan-card .ic svg{width:24px;height:24px;stroke:var(--ink);fill:none;stroke-width:1.7}
+.fan-card h3{font-size:var(--fs-24);margin-bottom:var(--sp-2);line-height:1.14}
+.fan-card p{color:var(--ink-2);font-size:var(--fs-16)}
+.fan-card .tag{margin-top:auto;padding-top:var(--sp-4);font-family:var(--font-head);font-weight:700;
+  font-size:var(--fs-12);letter-spacing:.1em;text-transform:uppercase;color:var(--gold-2)}
+.fan-card .tag.top{order:-1;margin-top:0;padding-top:0;padding-bottom:var(--sp-3)}
+/* featured "Start here" card */
+.fan-card.feat{background:var(--blue);border-color:var(--blue)}
+.fan-card.feat h3,.fan-card.feat p{color:#fff}
+.fan-card.feat .tag{color:#E7C98B}
+.fan-card.feat .ic{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.08)}
+.fan-card.feat .ic svg{stroke:#fff}
+/* controls */
+.rail-controls{display:flex;align-items:center;justify-content:center;gap:var(--sp-4);margin-top:var(--sp-5)}
+.rail-arrow{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;
+  border:1.5px solid var(--ink);background:var(--surface);color:var(--ink);cursor:pointer;flex:none;
+  transition:background .2s,color .2s}
+.rail-arrow:hover{background:var(--ink);color:var(--paper)}
+.rail-arrow svg{width:20px;height:20px;stroke:var(--ink);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.rail-arrow:hover svg{stroke:var(--paper)}
+.rail-dots{display:flex;align-items:center;gap:10px}
+.rail-dots button{width:10px;height:10px;padding:0;border:0;border-radius:50%;background:var(--line-2);
+  cursor:pointer;transition:transform .2s,background .2s}
+.rail-dots button[aria-current="true"]{background:var(--clay);transform:scale(1.3)}
+@media(max-width:600px){
+  .fan-stage{height:clamp(360px,60vh,440px)}
+  .fan-card{width:clamp(208px,72vw,248px)}
+}
+
+/* ───────────────────────── how it works (dark panel) ───────────────────────── */
+.how{background:var(--ink);color:var(--paper)}
+.how .head h2{color:var(--paper)}
+.how .head p{color:#CCBFA9}
+.how .eyebrow{color:var(--gold)}
+.how .eyebrow::before{background:var(--gold)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-5)}
+.stp{padding:var(--sp-5) var(--sp-5) var(--sp-4);border-radius:var(--r);
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}
+.stp .n{font-family:var(--font-head);font-weight:800;font-size:1.6rem;color:var(--gold);line-height:1;margin-bottom:var(--sp-3)}
+.stp h3{font-size:var(--fs-18);margin-bottom:var(--sp-2);color:var(--paper)}
+.stp p{color:#CCBFA9;font-size:var(--fs-14)}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* ───────────────────────── for parents ───────────────────────── */
+.parents{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--sp-10);align-items:center}
+.parents .eyebrow{margin-bottom:var(--sp-4)}
+.parents h2{font-size:var(--fs-h2);margin-bottom:var(--sp-5)}
+.safe-list{list-style:none;display:grid;gap:0}
+.safe-list li{display:flex;gap:var(--sp-4);align-items:flex-start;padding:var(--sp-4) 0;border-top:1px solid var(--line-2)}
+.safe-list li:last-child{border-bottom:1px solid var(--line-2)}
+.safe-list .ck{flex:none;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--gold);
+  display:grid;place-items:center;margin-top:2px}
+.safe-list .ck svg{width:16px;height:16px;stroke:var(--gold-2);stroke-width:2.6;fill:none}
+.safe-list b{display:block;font-family:var(--font-head);font-weight:700;font-size:var(--fs-18);margin-bottom:3px}
+.safe-list span{color:var(--ink-2);font-size:var(--fs-14)}
+.note-card{background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r-lg);
+  padding:var(--sp-6);box-shadow:var(--shadow-sm)}
+.note-card .scene{margin:0 0 var(--sp-5);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--paper-2)}
+.note-card .scene img{width:100%;height:auto}
+.note-card .pin{display:inline-block;font-family:var(--font-head);font-weight:700;font-size:var(--fs-12);
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gold-2);border:1px solid var(--gold);
+  border-radius:999px;padding:5px 12px;margin-bottom:var(--sp-4)}
+.note-card h3{font-size:var(--fs-24);margin-bottom:var(--sp-3)}
+.note-card p{color:var(--ink-2);margin-bottom:var(--sp-4);font-size:var(--fs-16)}
+.note-card .btn{margin-top:var(--sp-2)}
+@media(max-width:900px){.parents{grid-template-columns:1fr;gap:var(--sp-8)}}
+
+/* ───────────────────────── CTA ───────────────────────── */
+.cta .box{background:var(--blue);border-radius:var(--r-lg);padding:var(--sp-12) var(--sp-6);
+  text-align:center;color:#fff}
+.cta .eyebrow{color:#E7C98B;justify-content:center;margin-bottom:var(--sp-4)}
+.cta .eyebrow::before{background:#E7C98B}
+.cta h2{font-size:var(--fs-h2);color:#fff;margin-bottom:var(--sp-4)}
+.cta h2 .accent{color:#E7C98B}
+.cta p{font-size:var(--fs-18);color:#E4DAC8;max-width:34em;margin:0 auto var(--sp-6)}
+.cta .email{display:block;margin-top:var(--sp-5);font-size:var(--fs-14);color:#E4DAC8}
+.cta .email a{color:#fff;font-weight:600;text-decoration:underline}
+
+/* ───────────────────────── FAQ ───────────────────────── */
+.faq{max-width:820px;margin:0 auto}
+.faq details{border-top:1px solid var(--line-2)}
+.faq details:last-child{border-bottom:1px solid var(--line-2)}
+.faq summary{font-family:var(--font-head);font-weight:700;font-size:var(--fs-18);cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:var(--sp-4);padding:var(--sp-5) 4px;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pm{flex:none;width:32px;height:32px;border:1.5px solid var(--ink);border-radius:50%;
+  display:grid;place-items:center;font-size:1.2rem;line-height:1;transition:transform .2s,background .2s,color .2s,border-color .2s}
+.faq details[open] summary .pm{transform:rotate(45deg);background:var(--clay);border-color:var(--clay);color:#fff}
+.faq p{color:var(--ink-2);padding:0 4px var(--sp-5);font-size:var(--fs-16)}
+
+/* ───────────────────────── footer ───────────────────────── */
+footer{background:var(--ink);color:#CCBFA9;padding:var(--sp-10) 0 var(--sp-6)}
+.foot{display:flex;justify-content:space-between;gap:var(--sp-8);flex-wrap:wrap;margin-bottom:var(--sp-8)}
+.foot .brand .mark{border-color:var(--paper);background:transparent}
+.foot .brand .wm b{color:var(--paper)}
+.foot .brand p{margin-top:var(--sp-3);font-size:var(--fs-14);color:#CCBFA9;max-width:24em}
+.foot-col h4{color:var(--paper);font-size:var(--fs-12);letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:var(--sp-4);font-family:var(--font-head);font-weight:700}
+.foot-col a{display:block;margin-bottom:10px;font-size:var(--fs-14);color:#CCBFA9;
+  padding:2px 0;transition:color .2s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.14);padding-top:var(--sp-5);font-size:var(--fs-12);
+  display:flex;justify-content:space-between;gap:var(--sp-3);flex-wrap:wrap}
+.foot-bottom a{text-decoration:underline}
+.foot-bottom a:hover{color:var(--gold)}
+
+/* ───────────────────────── scroll reveals (gated) ───────────────────────── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ───────────────────────── mobile rhythm ───────────────────────── */
+@media(max-width:768px){
+  .wrap{padding:0 20px}
+  section{padding:var(--sp-10) 0}
+  .head{margin-bottom:var(--sp-6)}
+  .nav-inner{height:62px}
+  .nav-links{top:62px}
+  .hero{padding:var(--sp-6) 0}
+  .cta .box{padding:var(--sp-10) var(--sp-5)}
+  .foot{gap:var(--sp-6)}
+}
+@media(max-width:600px){
+  .ticker{display:none}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{width:100%}
+  .art-chip{font-size:var(--fs-12);padding:7px 12px}
+  .chip-1{left:0}.chip-2{right:0}
+}
+
+/* ───────────────────────── reduced motion ───────────────────────── */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .ticker__track{animation:none}
+  .badge-free .pulse{animation:none}
+  .rail{scroll-behavior:auto}
+  *{transition-duration:.001ms !important}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== TICKER ===== -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>100% Free<i>·</i>Grades 5–8<i>·</i>Weekly 1-on-1<i>·</i>Public Forum<i>·</i>Lincoln–Douglas<i>·</i>Policy / CX<i>·</i>Parliamentary<i>·</i>Public Speaking<i>·</i></span>
+    <span>100% Free<i>·</i>Grades 5–8<i>·</i>Weekly 1-on-1<i>·</i>Public Forum<i>·</i>Lincoln–Douglas<i>·</i>Policy / CX<i>·</i>Parliamentary<i>·</i>Public Speaking<i>·</i></span>
+  </div>
+</div>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Vortex Speech and Debate, home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 40 36" fill="none">
+          <path d="M7 4 H29 A6 6 0 0 1 35 10 V20 A6 6 0 0 1 29 26 H16 L9 33 V26 H7 A6 6 0 0 1 1 20 V10 A6 6 0 0 1 7 4 Z" stroke="#33291E" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M18 8 a6 6 0 1 1 -4.6 10.4 a3.4 3.4 0 1 1 4.8 -2.5" stroke="#B0772F" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </svg>
+      </span>
+      <span class="wm"><b>Vortex</b><small>Speech &amp; Debate</small></span>
+    </a>
+    <nav class="nav-links" id="menu" aria-label="Primary">
+      <a href="#learn">Curriculum</a>
+      <a href="#how">How it works</a>
+      <a href="#parents">For parents</a>
+      <a href="#faq">FAQ</a>
+      <a href="#register" class="btn btn-primary">Register free</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="const m=document.getElementById('menu');const o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<a id="top"></a>
+<main id="content">
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="badge-free"><span class="pulse"></span> Free · Weekly 1-on-1 · Grades 5–8</span>
+      <p class="slogan">Confidence that lasts well beyond the classroom.</p>
+      <h1>Confident speaking. Clear thinking. <span class="accent">One week at a time.</span></h1>
+      <p class="lede">Free, one-on-one coaching in debate and public speaking for kids in grades 5 through 8. We meet for an hour a week, online. A lot of the kids who come to us are pretty shy at first, and watching them turn into confident speakers is the whole reason we do this.</p>
+      <div class="hero-cta">
+        <a href="https://forms.gle/mnPfET2kPcweN27G6" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Register your child
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#learn" class="btn btn-ghost">See the curriculum</a>
+      </div>
+    </div>
+    <div class="hero-art reveal">
+      <div class="art-frame">
+        <img src="hero-scene.svg" alt="" width="360" height="360" loading="eager" />
+      </div>
+      <div class="art-chip chip-1">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+        100% free
+      </div>
+      <div class="art-chip chip-2">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>
+        Safe &amp; supervised
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MISSION ===== -->
+<section class="mission">
+  <div class="wrap center">
+    <span class="eyebrow" style="margin-bottom:var(--sp-5)">Why we're here</span>
+    <div class="inner reveal">
+      <p class="lead">Knowing how to make your case, and how to really listen to someone else's, is one of the most useful things a kid can learn. We didn't think something that important should cost money, so Vortex is <b>free and open</b> to any middle schooler who wants to give it a shot.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CURRICULUM ===== -->
+<section id="learn">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">The Curriculum</span>
+      <h2>Every format. Plus the <em>fundamentals.</em></h2>
+      <p>Start with the basics of speaking and reasoning, then explore the major debate styles to find the one that clicks.</p>
+    </div>
+    <div class="fan-wrap reveal">
+      <div class="fan-stage" id="curriculum-fan" role="group" aria-roledescription="carousel" aria-label="Debate curriculum cards">
+        <article class="fan-card feat" data-i="0" tabindex="0">
+          <span class="tag top">Start here</span>
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.4"/></svg></div>
+          <h3>No experience needed</h3>
+          <p>Most of our students have never debated before, and that's completely fine. We start with the basics and go at whatever pace works for your kid.</p>
+        </article>
+        <article class="fan-card" data-i="1" tabindex="0">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M17 8h2a2 2 0 012 2 2 2 0 01-2 2h-2"/><path d="M3 14h11a3 3 0 003-3V7a3 3 0 00-3-3H6a3 3 0 00-3 3z"/><path d="M7 18l-2 3M13 18l2 3"/></svg></div>
+          <h3>Public Forum</h3>
+          <p>Two-person teams debate the news in plain language. The friendliest place to begin.</p>
+          <span class="tag">Team · current events</span>
+        </article>
+        <article class="fan-card" data-i="2" tabindex="0">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 7l7-4 7 4M5 7l-2 6h4zM19 7l2 6h-4z"/></svg></div>
+          <h3>Lincoln–Douglas</h3>
+          <p>One-on-one debates about values and big ideas: fairness, freedom, right and wrong.</p>
+          <span class="tag">Solo · philosophy</span>
+        </article>
+        <article class="fan-card" data-i="3" tabindex="0">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h11l5 5v11H4z"/><path d="M14 4v6h6M8 14h8M8 17h5"/></svg></div>
+          <h3>Policy / CX</h3>
+          <p>Deep research and evidence on one big question. Great for kids who love diving in.</p>
+          <span class="tag">Research · evidence</span>
+        </article>
+        <article class="fan-card" data-i="4" tabindex="0">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></div>
+          <h3>Parliamentary</h3>
+          <p>Topics announced with little prep time. It's all about quick thinking and staying cool under pressure.</p>
+          <span class="tag">Improv · quick prep</span>
+        </article>
+        <article class="fan-card" data-i="5" tabindex="0">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 14a3 3 0 003-3V6a3 3 0 00-6 0v5a3 3 0 003 3z"/><path d="M5 11a7 7 0 0014 0M12 18v3M8 21h8"/></svg></div>
+          <h3>Speaking &amp; Delivery</h3>
+          <p>Voice, posture, pacing, eye contact, and beating the nerves. The foundation underneath every format.</p>
+          <span class="tag">Confidence · presence</span>
+        </article>
+      </div>
+      <div class="rail-controls">
+        <button class="rail-arrow rail-prev" type="button" aria-label="Previous card">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="rail-dots" id="rail-dots" role="tablist" aria-label="Choose a card"></div>
+        <button class="rail-arrow rail-next" type="button" aria-label="Next card">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how" class="how">
+  <div class="wrap">
+    <div class="head center reveal" style="margin-inline:auto">
+      <span class="eyebrow">How it works</span>
+      <h2>Easy to join. Safe by design.</h2>
+      <p>Every student gets their own coach for a private weekly hour online. A parent registers. No student accounts, no hassle.</p>
+    </div>
+    <div class="steps">
+      <div class="stp reveal"><div class="n">1</div><h3>A parent registers</h3><p>A two-minute form: your name and email, your child's first name and grade. That's all we collect.</p></div>
+      <div class="stp reveal"><div class="n">2</div><h3>Get matched with a coach</h3><p>We match your child with a coach, find a weekly time that works for your family, and send you a secure link.</p></div>
+      <div class="stp reveal"><div class="n">3</div><h3>Meet 1-on-1, weekly</h3><p>An hour each week, just your child and their coach. You're always welcome to sit in or watch from the next room.</p></div>
+      <div class="stp reveal"><div class="n">4</div><h3>Practice &amp; grow</h3><p>Drills, mock debates, and honest feedback. Your child gets a little better every week, and has fun doing it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOR PARENTS ===== -->
+<section id="parents">
+  <div class="wrap parents">
+    <div class="reveal">
+      <span class="eyebrow">For parents</span>
+      <h2>Your child's safety comes first.</h2>
+      <ul class="safe-list">
+        <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span><div><b>Parents are always welcome.</b><span>Because sessions are one-on-one, we encourage a parent or guardian to be present or nearby. The virtual door is always open.</span></div></li>
+        <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span><div><b>Recorded for transparency.</b><span>Sessions can be recorded at your request and shared with you, so you always know exactly how your child's time is spent.</span></div></li>
+        <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span><div><b>Private, secure video.</b><span>Business-grade meetings with waiting rooms and passwords, not open or gaming chat apps. We collect almost nothing and never sell data.</span></div></li>
+        <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span><div><b>COPPA-compliant &amp; parent-led.</b><span>Registration and all communication go through you, the parent, in line with children's-privacy law.</span></div></li>
+      </ul>
+    </div>
+    <div class="note-card reveal">
+      <figure class="scene"><img src="session-scene.svg" alt="A private one-on-one online debate session: a coach and a student in separate video tiles with a secure lock badge." width="480" height="300" loading="lazy" /></figure>
+      <span class="pin">Who coaches</span>
+      <h3>Coached by a high-school freshman.</h3>
+      <p>So there's no surprise once classes begin: your child's coach is a <strong>high-school freshman</strong> and passionate debater who volunteers their time, which is exactly why the program is free. A responsible adult runs the program and handles all safety, privacy, and legal matters.</p>
+      <p>We follow youth-protection best practices, and our Privacy Policy and Code of Conduct are available to any family who wants them.</p>
+      <a href="#register" class="btn btn-ghost">Have a question? Ask us
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="register" class="cta">
+  <div class="wrap reveal">
+    <div class="box">
+      <span class="eyebrow">Registration</span>
+      <h2>Ready to find <span class="accent">your voice?</span></h2>
+      <p>Sign-up is free and takes about two minutes. Fill out a short form and we'll follow up with scheduling info.</p>
+      <a href="https://forms.gle/mnPfET2kPcweN27G6" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Register your child (it's free)
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <span class="email">Prefer email? Reach us at <a href="mailto:vortexdebate@gmail.com">vortexdebate@gmail.com</a></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Questions</span>
+      <h2>Good to know</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>Who will coach my child? <span class="pm" aria-hidden="true">+</span></summary><p>Your child's coach is a <strong>high-school freshman</strong> who is an experienced, passionate debater and volunteers their time. That's exactly why the program is free. A responsible adult supervises the program and handles all safety, privacy, and legal matters. We want this clear up front so there are no surprises once sessions begin.</p></details>
+      <details><summary>Is it really free? <span class="pm" aria-hidden="true">+</span></summary><p>Yes, completely. Vortex Speech &amp; Debate is volunteer-run and there's no cost to families, now or ever.</p></details>
+      <details><summary>What ages is it for? <span class="pm" aria-hidden="true">+</span></summary><p>Students in grades 5–8 (roughly ages 10–14). Because coaching is one-on-one, every session is tailored to your child's exact age and level.</p></details>
+      <details><summary>What does a session look like? <span class="pm" aria-hidden="true">+</span></summary><p>One student, one coach, one hour, every week, online. The coach tailors each session to your child, with a parent always welcome to be present.</p></details>
+      <details><summary>Does my child need experience? <span class="pm" aria-hidden="true">+</span></summary><p>Not at all. Most of our students are brand new to debate. We start with the fundamentals.</p></details>
+      <details><summary>What do we need to take part? <span class="pm" aria-hidden="true">+</span></summary><p>A computer or tablet with a camera and microphone, and a quiet spot to join. That's it.</p></details>
+      <details><summary>How do you keep kids safe online? <span class="pm" aria-hidden="true">+</span></summary><p>Sessions are one-on-one, and we encourage a parent or guardian to be present or nearby. We use secure video with waiting rooms and passwords, can record sessions on request, keep all communication through parents, and a responsible adult oversees the program. See the "For parents" section for details.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div style="max-width:24em">
+        <a href="#top" class="brand">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 40 36" fill="none">
+              <path d="M7 4 H29 A6 6 0 0 1 35 10 V20 A6 6 0 0 1 29 26 H16 L9 33 V26 H7 A6 6 0 0 1 1 20 V10 A6 6 0 0 1 7 4 Z" stroke="#F4ECDC" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M18 8 a6 6 0 1 1 -4.6 10.4 a3.4 3.4 0 1 1 4.8 -2.5" stroke="#B0772F" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </span>
+          <span class="wm"><b>Vortex</b></span>
+        </a>
+        <p>A free online debate &amp; public-speaking program for students in grades 5–8.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Program</h4>
+        <a href="#learn">Curriculum</a>
+        <a href="#how">How it works</a>
+        <a href="#parents">For parents</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get started</h4>
+        <a href="#register">Register free</a>
+        <a href="mailto:vortexdebate@gmail.com">Email us</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Vortex Speech &amp; Debate · A free, volunteer-run program.</span>
+      <span><a href="privacy.html">Privacy Policy</a> · Code of Conduct available on request.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── Year stamp ─────────────────────────────────────────────────
+  var yr = document.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  // ── Scroll reveals (one observer, staggered for siblings) ──────
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) {
+      var sibs = el.parentElement.querySelectorAll('.reveal');
+      if (sibs.length > 1) {
+        var idx = [].indexOf.call(sibs, el);
+        if (idx > -1) el.style.transitionDelay = (idx * 0.08) + 's';
+      }
+      io.observe(el);
+    });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // ── Close mobile menu on link tap ──────────────────────────────
+  var menu = document.getElementById('menu');
+  if (menu) menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      menu.classList.remove('open');
+      var t = document.querySelector('.nav-toggle');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+})();
+</script>
+
+<!-- ===== Curriculum fan carousel (GSAP) ===== -->
+<script>
+(function () {
+  "use strict";
+  function init() {
+    var wrap = document.getElementById('curriculum-fan');
+    if (!wrap || typeof gsap === 'undefined') return;
+    var cards = Array.prototype.slice.call(wrap.querySelectorAll('.fan-card'));
+    var total = cards.length;
+    if (!total) return;
+    var dotsWrap = document.getElementById('rail-dots');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var active = 0;          // start on "No experience needed"
+    var entered = false;
+
+    // Fan position by signed circular offset from the active (front) card.
+    var POS = {
+      '0':  { rot:0,   sc:1.00, x:0,   y:0,   z:30, op:1 },
+      '1':  { rot:10,  sc:0.90, x:11,  y:1.4, z:20, op:1 },
+      '-1': { rot:-10, sc:0.90, x:-11, y:1.4, z:20, op:1 },
+      '2':  { rot:19,  sc:0.80, x:20,  y:4.6, z:14, op:1 },
+      '-2': { rot:-19, sc:0.80, x:-20, y:4.6, z:14, op:1 },
+      '3':  { rot:0,   sc:0.66, x:0,   y:1.6, z:1,  op:0 } // card opposite the front one, tucked behind
+    };
+
+    function mult() {
+      var w = window.innerWidth;
+      if (w < 480) return 0.42;
+      if (w < 640) return 0.55;
+      if (w < 768) return 0.70;
+      if (w < 1024) return 0.85;
+      return 1.0;
+    }
+
+    function offset(i) {
+      var d = ((i - active) % total + total) % total;
+      if (d > total / 2) d -= total;
+      return d;
+    }
+
+    function render(animate) {
+      var m = mult();
+      cards.forEach(function (card, i) {
+        var p = POS[String(offset(i))] || POS['3'];
+        var target = {
+          xPercent: -50, yPercent: -50,
+          x: (p.x * m) + 'rem', y: p.y + 'rem',
+          rotation: p.rot, scale: p.sc, opacity: p.op, zIndex: p.z
+        };
+        card.setAttribute('aria-hidden', p.op === 0 ? 'true' : 'false');
+        if (animate && !reduceMotion) {
+          gsap.to(card, Object.assign({ duration: 0.6, ease: 'power3.out', overwrite: 'auto' }, target));
+        } else {
+          gsap.set(card, target);
+        }
+      });
+      dots.forEach(function (d, i) { d.setAttribute('aria-current', i === active ? 'true' : 'false'); });
+    }
+
+    function go(i) { active = (i % total + total) % total; render(true); }
+
+    // Build dot indicators
+    var dots = [];
+    for (var k = 0; k < total; k++) {
+      (function (idx) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('role', 'tab');
+        b.setAttribute('aria-label', 'Card ' + (idx + 1));
+        b.addEventListener('click', function () { go(idx); });
+        dotsWrap.appendChild(b);
+        dots.push(b);
+      })(k);
+    }
+
+    // Arrows
+    var prev = wrap.parentNode.querySelector('.rail-prev');
+    var next = wrap.parentNode.querySelector('.rail-next');
+    if (prev) prev.addEventListener('click', function () { go(active - 1); });
+    if (next) next.addEventListener('click', function () { go(active + 1); });
+
+    // Click / keyboard a card to bring it forward
+    cards.forEach(function (card, i) {
+      card.addEventListener('click', function () { if (offset(i) !== 0) go(i); });
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(i); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); go(active + 1); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); go(active - 1); }
+      });
+    });
+
+    window.addEventListener('resize', function () { render(false); });
+
+    function enter() {
+      if (entered) return;
+      entered = true;
+      if (reduceMotion) { render(false); return; }
+      var m = mult();
+      cards.forEach(function (card, i) {
+        var p = POS[String(offset(i))] || POS['3'];
+        gsap.set(card, { xPercent: -50, yPercent: -50, x: 0, y: '7rem', rotation: 0, scale: 0.6, opacity: 0, zIndex: p.z });
+        gsap.to(card, {
+          x: (p.x * m) + 'rem', y: p.y + 'rem', rotation: p.rot, scale: p.sc, opacity: p.op,
+          duration: 1.1, ease: 'elastic.out(1.04,.78)', delay: 0.15 + Math.abs(offset(i)) * 0.07
+        });
+      });
+      dots.forEach(function (d, i) { d.setAttribute('aria-current', i === active ? 'true' : 'false'); });
+    }
+
+    render(false);
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { enter(); io.disconnect(); } });
+      }, { threshold: 0.25 });
+      io.observe(wrap);
+    } else { enter(); }
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<!-- Analytics: GoatCounter, no cookies, COPPA-safe, privacy-first -->
+<script data-goatcounter="https://ishstar28.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
